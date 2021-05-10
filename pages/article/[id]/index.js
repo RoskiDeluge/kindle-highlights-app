@@ -1,7 +1,8 @@
 import { server } from "../../../config";
 import Link from "next/link";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import Meta from "../../../components/Meta";
+import HighlightsList from "../../../components/HighlightsList";
 
 const article = ({ article }) => {
   // const router = useRouter()
@@ -11,9 +12,10 @@ const article = ({ article }) => {
     <>
       <Meta title={article.title} />
       <h1>{article.title}</h1>
-      {/* <p>{article.body}</p> */}
-      <br />
       <Link href="/">Go Back</Link>
+      {/* <p>{article.authors}</p> */}
+      <HighlightsList article={article} />
+      <br />
     </>
   );
 };
@@ -35,8 +37,8 @@ export const getStaticPaths = async () => {
 
   const articles = await res.json();
 
-  const ids = articles.map((article) => article.asin);
-  const paths = ids.map((id) => ({ params: { id: id.toString() } }));
+  const asins = articles.map((article) => article.asin);
+  const paths = asins.map((asin) => ({ params: { id: asin.toString() } }));
 
   return {
     paths,
