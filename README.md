@@ -1,3 +1,7 @@
+# App to display and navigate through kindle highlights.
+
+Adapted from Brad Traversy's Next.js crash course.
+
 # Next.js Crash Course Project
 
 Project from my Next.js crash course on YouTube
