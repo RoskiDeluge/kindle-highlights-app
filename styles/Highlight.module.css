@@ -47,4 +47,8 @@
     width: 100%;
     flex-direction: column;
   }
+
+  .card p {
+    font-size: 1rem;
+  }
 }
